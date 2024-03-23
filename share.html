@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <div class="all">
+    <head></head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact us</title>
+        <style>
+            body{
+                background-color: darkblue;
+            }
+            .contact-grid{
+                display:grid;
+                grid-template-columns:repeat(2 ,1fr);
+                grid-gap: 6px;
+                flex-direction: column;
+                margin-bottom: 50px;
+            }
+            .Heading{
+                font-size: xx-large;
+                margin-bottom: auto;
+                text-align: center;
+                color: aqua;
+                font-family: cursive;
+                text-decoration: dotted;
+            }
+            .contact-card{
+             border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: aliceblue;
+            align-items:auto;
+            }
+            .details{
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: cursive;
+            }
+            .box{
+                max-width: 700px;
+                max-height: 500px;
+                box-sizing: border-box;
+                border-style: ridge;
+                padding:50px;
+                margin: auto;
+                background-color: skyblue;
+            }
+            .writing-box{
+                height: fit-content;
+                width: fit-content; 
+                box-sizing: content-box;
+                border-style:inset;
+            }
+            .description-box{
+                width:fit-content;
+                height: fit-content;
+                box-sizing:unset;
+                border-style: inset;
+            }
+            .box-contact{
+                text-align: center;
+                font-size: x-large;
+            }
+            .image{
+                object-fit: contain;
+                height: 200px;
+                width: 400px;
+            }
+            .rate-box{
+                border: 5px;
+                border-radius: 15px;
+                border-style:hidden;
+                text-align:right;
+            }
+        </style>
+        <body>
+            <div class="contact-grid">
+                <div class="contact-card">
+                <div class="Heading">Email</div>
+                <p class="details">Hub.recipe@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                <div class="Heading">Social Media</div>
+                <a href="https://web.whatsapp.com/"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png"></a>
+                <a href="https://www.instagram.com/?hl=en"><img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png"></a>
+                <a href="https://www.facebook.com/"><img src="https://cdn-icons-png.flaticon.com/128/20/20837.png"></a>
+                <a href="https://www.youtube.com/"><img src="https://cdn-icons-png.flaticon.com/128/174/174883.png"></a>
+                <a href="https://twitter.com/?lang=en-in"><img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png"></a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-contact">Contact Us</div>
+                <div class="writing-box">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div><br>
+               <br> <div class="writing-box">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter a valid Email address" required>
+                </div><br>
+               <br> <div class="description-box">
+                <label for="content">Feel free to share your recipes:</label>
+                <input type="textarea" id="content" name="content"  rows="10" cols="50" required>
+                </div><br>
+                <br><div class="rate-box">
+                    <label for="range">Rate us:</label>
+                    <input type="range" id="range" name="range" min="0" max="10" value="1" oninput="rangeValue.innerText=this.value">
+                    <p id="rangeValue">1</p>
+                </div>
+                <button type="button" onclick="alert('Thankyou for your Valuable feedback')"class="form-control">Submit</button>
+            </div>
+        </body>
+    </html>

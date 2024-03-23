@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 20px;
+            background-image: url(https://th.bing.com/th/id/OIP.j30ZHY_xIm6MwsZuihUh1QHaD2?rs=1&pid=ImgDetMain);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .navbar-logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: bisque;
+            font-style: italic;
+            font-family: cursive;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar-menu li {
+            margin: 0 10px;
+        }
+
+        .navbar-menu li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            color: red;
+        }
+
+        .navbar-menu li a:hover {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .banner {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            align-items: center;
+            text-align: center;
+            font-size: larger;
+            font-weight: bold;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .banner-title {
+            font-size: 68px;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+            text-align:center;
+            margin: 45px;
+            text-shadow: 16px 16px 16px peru;
+            text-decoration: underline;
+            
+
+        }
+
+        .services {
+            padding: 40px 0; 
+            color: aqua;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .services-card:hover{
+            background-color: #e0e0e0;
+            box-shadow: 9px 9px 9px  black;
+        }
+
+        .services-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            color: black;
+        
+        }
+
+        .services-card-image {
+            height: 300px;;
+            object-fit: cover;
+        }
+
+        .services-card-content {
+            padding: 20px;
+        }
+
+        .services-card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: burlywood;
+        }
+
+        .services-card-text {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .services-card-link {
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .services-card-link:hover {
+            background-color: #333;  
+            color: white;
+        }
+
+        .about {
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            color: whitesmoke;
+        }
+
+        .about-image {
+            width: 50%;
+        }
+
+        .about-text {
+            width: 50%;
+            padding: 20px;
+            color: whitesmoke;
+        }
+
+        .about-text-small {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        .about-text-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        .about-text-paragraph {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        .about-text-button {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .about-text-button:hover {
+            background-color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image, .about-text {
+                width: 100%;
+            }
+        }
+        body{
+            background-image:url(https://assets.londonist.com/uploads/2018/09/i875/the_gate.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .our-services{
+            text-align: center;
+            font-size: 50px;
+            text-shadow: 4px 4px 8px bisque;
+        }
+        .Company{
+            text-align:center;
+            font-size:x-large;
+        }
+        .price{
+            text-align: right;
+            font-size: larger;
+            text-transform: bold;
+        }
+        .offers{
+           background-size: cover;
+           
+        }
+        .discount{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 40px;
+            background-image: url(https://twigscafe.com/wp-content/uploads/2020/10/Colorful-Foods-800x526.jpg);
+            color:whitesmoke;
+            text-decoration: underline;
+        }
+        .discount:hover{
+            box-shadow: 12px 12px 12px peachpuff;
+            background-color: #ccc;
+        }
+        .sub-code{
+            padding: 20px;
+        }
+        .discount1{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 40px;
+            background-image: url(https://th.bing.com/th/id/OIP.wPkDnnGcIyehJ0zkJ7nFEAHaEo?rs=1&pid=ImgDetMain);
+            background-size: cover;
+            color:whitesmoke;
+            text-decoration: underline;
+        }
+        .discount1:hover{
+            box-shadow: 12px 12px 12px palevioletred;
+            background-color: #ccc;
+        }
+        .discount2{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 40px;
+            background-image: url(https://th.bing.com/th/id/OIP.22XOhxYrd_Pu__NkrGadMgHaEo?rs=1&pid=ImgDetMain);
+            background-size: cover;
+            color:whitesmoke;
+        }
+        .discount2:hover{
+            box-shadow: 12px 12px 12px plum;
+            background-color: #ccc;
+        }
+        mark{
+            background-color: beige;
+        }
+        .code{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-logo">Recipe HUB</div>
+            <ul class="navbar-menu">
+                <li><a href="First page.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="share.html">Share your recipe</a></li>
+            </ul>
+        </div>
+        <div class="banner">
+            <div class="banner-title"></div>
+            <h3 class="services-card-title"></h3>
+            <div class="services-grid">
+        <div class="offers">
+            <div class="discount">
+                Dish Of The Day
+        <br>
+        <div class="sub-code"><mark>VEG</mark></div><br>
+    <br>
+        <div class="code">
+           <marquee direction="right"> Starter: <b>Fritters</b><br>
+           <br> Main Course: <b>Butter Panner Masala</b><br>
+           <br> Desert: <b>Gulab Jamun</b></marquee>
+        </div>
+        </div>
+        </div>
+        <div class="discount1"> 
+            Dish Of The Day
+            <br>
+            <div class="sub-code"><mark>NON VEG</mark></div><br>
+            <br>
+            <div class="code">
+               <marquee direction="right">Starter: <b>Chicken lolipop</b><br>
+           <br> Main Course: <b>Butter Chicken</b><br>
+           <br> Desert: <b>Fish luqma</b></marquee>
+            </div>
+        </div>
+        <div class="discount2">
+            Today's Nutritious Tips<br>
+            <br>
+            <div class="code">
+                1. Limit sugary drinks Sugary drinks like sodas, fruit juices, and sweetened teas are the primary source of added sugar in the American diet<br><br>
+                2. Eat nuts and seeds<br><br>
+                3. Avoid ultra-processed foods<br><br>
+                4. Don’t fear coffee
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="Company">
+            <h3></h3>
+            <marquee direction="left">
+                
+            </marquee>
+        </div>
+        <div class="services">
+            <h2 class="our-services">Veg Cusine</h2><br>
+            <div class="services-grid">
+                <div class="services-card">
+                    <img src="https://e0.pxfuel.com/wallpapers/386/614/desktop-wallpaper-vegetable-biryani-biriyani.jpg" alt="Veg Biryani" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Veg Biryani</h3>
+                        <p class="services-card-text">Biryani is a celebration of exotic flavors,vibrant colors and pleasing aromas infused into a pot of goodness</p>
+                        <a href="veg biryani.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://th.bing.com/th/id/OIP.xXUVs9SY_EKtD6Cmur8ZRAAAAA?rs=1&pid=ImgDetMain" alt="Palak Panner" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Palak Panner</h3>
+                        <p class="services-card-text">Palak paneer is a classic curried dish from North Indian cuisine made with fresh spinach, onions, spices, paneer and herbs. ‘Palak’ is a Hindi word for ‘Spinach’ and ‘Paneer’ is ‘Indian cottage cheese’. </p>
+                        <a href="a.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://i.pinimg.com/originals/e1/97/e9/e197e9e099ab5a8d33f9217473190dfe.jpg" alt="Dal Makhani" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Dal Makhani</h3>
+                        <p class="services-card-text">Dal Makhani is one of them. It is one of the most popular lentil recipes from North Indian Punjabi cuisine and is made with whole black lentils and kidney beans. This Dal Makhani Recipe is a restaurant style version with subtle smoky flavors and creaminess of the lentils.</p>
+                        <a href="Dish.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://th.bing.com/th/id/OIP.6aZ9wkE9PAKPjhvIhIZnRgHaEw?w=202&h=129&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Panner Butter Masala" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Panner Butter Masala</h3>
+                        <p class="services-card-text">Paneer Butter Masala, also known as butter paneer is a rich & creamy curry made with paneer, spices, onions, tomatoes, cashews and butter. As the name denotes, the curry is cooked in butter which imparts it’s characteristic buttery flavor to the dish.</p>
+                        <a href="paneer butter masala.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://i.ytimg.com/vi/DwwdZjfZ3Y4/maxresdefault.jpg" alt="Chole" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Chole</h3>
+                        <p class="services-card-text">“Chole” is a Punjabi word for “chickpeas” and “masala” is a word for “spices”. So this dish is nothing but chickpeas cooked to perfection with various spices, onions, tomatoes and herbs.</p>
+                        <a href="chole.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://th.bing.com/th/id/OIP.Zgwy_Vtj0kwV6Mw54iT8FwHaD4?rs=1&pid=ImgDetMain" alt="Butter Garlic Naan" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Butter Garlic Naan</h3>
+                        <p class="services-card-text">Butter garlic naan is a traditional Indian flatbread and one of the most popular versions of naan. It’s made with flour, yeast, salt, sugar, and yogurt. Once the dough has been baked in a hot tandoor oven, the golden naan is taken out and brushed with butter or ghee, then topped with minced garlic.</p>
+                        <a href="butter naan.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+                <div class="services">
+                    <h2 class="our-services">Non Veg Cusine</h2><br>
+                    <div class="services-grid">
+                <div class="services-card">
+                    <img src="https://th.bing.com/th/id/OIP.JaEpl_gznthz9DM6m3y0TgHaEK?rs=1&pid=ImgDetMain" alt="Butter Chicken" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Butter Chicken</h3>
+                        <p class="services-card-text">Butter Chicken also known as Chicken Makhani is a classic Indian dish that’s made by simmering marinated & grilled chicken (Tandoori chicken) in a spicy, aromatic, buttery and creamy tomato gravy. This lip-smacking and delicious dish is hugely popular among the Indian food lovers across the world.</p>
+                        <a href="butter chicken.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://th.bing.com/th/id/OIP.moy31HQ9hd7rm4_nNFi1LwHaE6?rs=1&pid=ImgDetMain" alt="Egg Bhurji" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Egg Bhurji</h3>
+                        <p class="services-card-text">Egg Bhurji also known as Anda Bhurji, is an Indian dish of spiced scrambled eggs. Anda is the Hindi word for “Eggs” and Bhurji refers to “Scramble”. Anda Bhurji translates to scrambled eggs (but cooked in Indian style). It is made basically by scrambling beaten eggs with sautéed onions, tomatoes, spices and herbs.</p>
+                        <a href="egg bhurji.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+                <div class="services-card">
+                    <img src="https://th.bing.com/th/id/OIP.zA62Z36WjwyjyKe5bCfRZQHaE8?w=202&h=135&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lamb Chop" class="services-card-image">
+                    <div class="services-card-content">
+                        <h3 class="services-card-title">Lamb Chop</h3>
+                        <p class="services-card-text">Lamb chops marinated in mint or cilantro promise a punch of flavor. But the right side dishes for lamb allow the flavors of this succulent cut to stand out even more. Partner your chops with a lemony pea salad or whip up a fragrant pearl couscous</p>
+                        <a href="lamb chop.html" class="services-card-link">Read More...</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="about">
+            <div class="about-image">
+                <img src="interior.jpg" alt="">
+            </div>
+            <div class="about-text">
+                <p class="about-text-small"></p>
+                <h2 class="about-text-title"></h2>
+                <p class="about-text-paragraph"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
